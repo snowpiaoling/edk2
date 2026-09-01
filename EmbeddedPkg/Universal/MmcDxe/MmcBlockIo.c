@@ -316,7 +316,7 @@ MmcIoBlocks (
     // Check if the Card is in Ready status
     CmdArg      = MmcHostInstance->CardInfo.RCA << 16;
     Response[0] = 0;
-    Timeout     = 20;
+    Timeout     = 3000000;
     while (  (!(Response[0] & MMC_R0_READY_FOR_DATA))
           && (MMC_R0_CURRENTSTATE (Response) != MMC_R0_STATE_TRAN)
           && Timeout--)
